@@ -107,7 +107,7 @@ class Processor:
         """
         df_out = pd.DataFrame()
         for k, row_in in applications.iterrows():
-            row_out = {}
+            row_out = {'_id': k}
             for req in request:
                 column_name = self._produce_column_name(req)
                 year_to_select = row_in['year'] - req['prev'] if 'prev' in req else row_in['year']
